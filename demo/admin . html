@@ -1,0 +1,22 @@
+<!doctype html>
+<html>
+<head><meta charset="utf-8"><title>BridgePay — Admin</title></head>
+<body>
+  <h1>Admin Decision</h1>
+  <p>Order: 0001</p>
+  <div style="display:flex;gap:20px;">
+    <div>
+      <h3>Seller proof</h3>
+      <img src="./seller-proof.jpg" alt="Seller proof" style="max-width:300px;">
+    </div>
+    <div>
+      <h3>Buyer claim</h3>
+      <img src="./buyer-claim.jpg" alt="Buyer claim" style="max-width:300px;">
+    </div>
+  </div>
+  <p>AI Similarity Score: <strong id="score">0.32</strong></p>
+  <button onclick="document.getElementById('score').innerText='0.92'">Set Match (0.92)</button>
+  <button onclick="alert('Release payment (simulated)')">Release Payment</button>
+  <button onclick="alert('Hold payment (simulated)')">Hold Payment</button>
+</body>
+</html>
