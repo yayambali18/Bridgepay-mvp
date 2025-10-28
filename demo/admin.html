@@ -1,77 +1,41 @@
 <!doctype html>
-<html>
-<head>
-  <meta charset="utf-8">
-  <title>BridgePay Admin AI Dashboard</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      text-align: center;
-      padding: 60px;
-      background: #f3f4f6;
-      color: #111827;
-    }
-    h1 { color: #1e3a8a; }
-    .box {
-      background: white;
-      padding: 20px;
-      margin: 15px auto;
-      border-radius: 12px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-      width: 80%;
-      max-width: 600px;
-      text-align: left;
-    }
-    button {
-      background: #2563eb;
-      color: white;
-      padding: 10px 20px;
-      border: none;
-      border-radius: 8px;
-      cursor: pointer;
-      font-weight: bold;
-      margin-top: 20px;
-    }
-    button:hover { background: #1e40af; }
-    .decision {
-      background: #fef3c7;
-      padding: 15px;
-      border-radius: 8px;
-      color: #92400e;
-      margin-top: 20px;
-      font-weight: bold;
-    }
-  </style>
-</head>
-<body>
-  <h1>🤖 BridgePay AI Admin Dashboard</h1>
-  <p>Monitoring current transaction...</p>
+<html><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><title>BridgePay — Admin Demo</title><link rel="stylesheet" href="../assets/styles.css"></head><body>
+  <div class="container" style="padding:40px;">
+    <h1>BridgePay Admin — AI Review (Demo)</h1>
 
-  <div class="box">
-    <h3>Order #002 — Glasses (2 Pairs)</h3>
-    <p><strong>Seller Proof:</strong> Uploaded</p>
-    <p><strong>Buyer Status:</strong> Dispute Filed</p>
-    <p id="status">AI Review in progress...</p>
+    <div class="card" style="padding:16px;">
+      <h3>Order #0001 — Dispute Review</h3>
+      <div style="display:flex;gap:16px;flex-wrap:wrap;margin-top:12px;">
+        <div style="flex:1;">
+          <strong>Seller proof</strong>
+          <img src="../demo/seller-proof.jpg" style="max-width:250px;border-radius:8px;margin-top:8px;">
+        </div>
+        <div style="flex:1;">
+          <strong>Buyer claim</strong>
+          <img src="../demo/buyer-claim.jpg" style="max-width:250px;border-radius:8px;margin-top:8px;">
+        </div>
+      </div>
 
-    <button onclick="runAI()">🧠 Run BridgePay AI Review</button>
+      <p id="aiStatus" style="margin-top:12px;">AI similarity score: <strong id="score">0.32</strong></p>
 
-    <div id="decision" class="decision" style="display:none;"></div>
+      <div style="margin-top:12px;">
+        <button class="btn-primary" onclick="setMatch()">Set as Match (release)</button>
+        <button class="btn-secondary" onclick="setMismatch()">Set as Mismatch (hold)</button>
+      </div>
+
+      <div id="final" style="margin-top:14px;color:#444;"></div>
+    </div>
+
   </div>
 
   <script>
-    function runAI() {
-      const status = document.getElementById('status');
-      const decision = document.getElementById('decision');
-      status.textContent = "🧠 Analyzing image authenticity, timestamps, and metadata...";
-      setTimeout(() => {
-        decision.style.display = "block";
-        decision.textContent = "✅ Decision: Buyer evidence inconsistent. Payment released to Seller.";
-        decision.style.background = "#dcfce7";
-        decision.style.color = "#166534";
-        status.textContent = "AI Review complete.";
-      }, 3000);
+    function setMatch(){
+      document.getElementById('score').innerText = '0.92';
+      document.getElementById('final').innerText = '✅ Decision: Evidence matches. Release payment to seller (demo).';
+    }
+    function setMismatch(){
+      document.getElementById('score').innerText = '0.21';
+      document.getElementById('final').innerText = '⚠️ Decision: Evidence inconsistent. Hold funds and request return (demo).';
     }
   </script>
-</body>
-</html>
-
+</body></html>
