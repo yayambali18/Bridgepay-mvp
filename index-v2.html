@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>BridgePay — Demo</title>
+  <link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <div class="brand">
+        <div class="logo-mark">⛩️</div>
+        <div>
+          <div class="brand-title">BridgePay</div>
+          <div class="brand-sub"> <em>bridging distances, building bonds</em></div>
+        </div>
+      </div>
+      <nav class="nav">
+        <a href="#how">How it works</a>
+        <a href="#why">Why BridgePay</a>
+        <a href="demo/register.html">Register (demo)</a>
+        <button id="themeToggle" class="btn-ghost">🌙</button>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-inner">
+        <div class="hero-text">
+          <h1>BridgePay — The AI-Powered Trust Layer for Online Transactions</h1>
+          <p class="lead">Protecting buyers and sellers through verified payments and fair resolution.</p>
+          <div class="cta-row">
+            <a class="btn-primary" href="demo/register.html">Get Started (Demo)</a>
+            <a class="btn-secondary" href="#how">Learn More</a>
+          </div>
+        </div>
+        <div class="hero-visual">
+          <!-- small AI circuit illustration (decorative) -->
+          <div class="ai-box">AI</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="tracker" class="tracker container">
+      <h2>Track Your Order</h2>
+      <div class="tracker-row">
+        <div class="tracker-left">
+          <div class="tracker-card">
+            <strong>Order #0001</strong>
+            <p>2 × Glasses — <span class="muted">Pending delivery</span></p>
+            <p>Estimated delivery: <strong>2 days</strong></p>
+            <button class="btn-primary" onclick="openTracker()">Track Order</button>
+          </div>
+        </div>
+        <div class="tracker-right">
+          <!-- inline map / progress with a yellow car -->
+          <div class="map-card" id="mapCard" aria-hidden="false">
+            <svg id="mapSVG" viewBox="0 0 600 160" preserveAspectRatio="none" class="map-svg">
+              <!-- dotted path -->
+              <path id="route" d="M20 120 C120 90, 200 130, 300 80, 380 40, 480 100, 580 80" stroke="#ddd" stroke-width="3" fill="none" stroke-dasharray="6 8" />
+              <!-- yellow car (group) -->
+              <g id="car" transform="translate(20,115)">
+                <rect x="0" y="-10" rx="6" ry="6" width="44" height="20" fill="#FFD400" />
+                <circle cx="10" cy="12" r="4" fill="#222"></circle>
+                <circle cx="34" cy="12" r="4" fill="#222"></circle>
+              </g>
+            </svg>
+            <div class="map-status" id="mapStatus">Your order is at checkpoint #3 — in transit</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="how" class="how container">
+      <h2>How It Works</h2>
+      <div class="three-cols">
+        <div class="card">
+          <div class="icon">🧑‍💻</div>
+          <h3>Buyer</h3>
+          <p>Buyer makes purchase and payment is held securely by BridgePay.</p>
+        </div>
+        <div class="card">
+          <div class="icon">🏪</div>
+          <h3>Seller</h3>
+          <p>Seller uploads timestamped proof (photos/video) and ships the item.</p>
+        </div>
+        <div class="card">
+          <div class="icon">🤖</div>
+          <h3>BridgePay AI</h3>
+          <p>AI compares proofs — if valid, BridgePay releases funds. If not, dispute workflow triggers.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="why" class="why container">
+      <h2>Why BridgePay?</h2>
+      <div class="feature-row">
+        <div class="feature">
+          <div class="ficon">🔒</div>
+          <h4>Trust & Security</h4>
+          <p>Escrow-style holding, transparent logs, and auditable verification.</p>
+        </div>
+        <div class="feature">
+          <div class="ficon">⚡</div>
+          <h4>Instant Verification</h4>
+          <p>Fast, automated checks reduce disputes and chargebacks.</p>
+        </div>
+        <div class="feature">
+          <div class="ficon">📈</div>
+          <h4>Operational Savings</h4>
+          <p>Reduce manual review overhead — let AI catch obvious fraud.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="join container">
+      <h2>Join BridgePay</h2>
+      <p>Demo registration — test the flow and see the reduction in disputes.</p>
+      <a class="btn-primary" href="demo/register.html">Sign Up (Demo)</a>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div>© 2025 BridgePay | Designed by Yaya &amp; Co</div>
+      <div class="muted">Demo site — not for production use</div>
+    </div>
+  </footer>
+
+  <script src="assets/app.js"></script>
+</body>
+</html>
