@@ -1,0 +1,27 @@
+<!doctype html><html><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><title>BridgePay — Demo Register</title><link rel="stylesheet" href="../assets/styles.css"></head><body>
+  <div class="container" style="padding:48px;">
+    <h1>Create Demo Account</h1>
+    <p>Demo only — do not enter real bank credentials.</p>
+
+    <form id="demoReg" onsubmit="event.preventDefault(); registerDemo();">
+      <div style="max-width:480px;margin-top:18px;">
+        <input type="text" id="name" placeholder="Full name" required style="width:100%;padding:12px;margin-bottom:10px;border-radius:8px;border:1px solid #ddd;">
+        <input type="email" id="email" placeholder="Email address" required style="width:100%;padding:12px;margin-bottom:10px;border-radius:8px;border:1px solid #ddd;">
+        <input type="text" id="bank" placeholder="Bank name (demo)" style="width:100%;padding:12px;margin-bottom:10px;border-radius:8px;border:1px solid #ddd;">
+        <input type="text" id="acct" placeholder="Account number (demo)" style="width:100%;padding:12px;margin-bottom:10px;border-radius:8px;border:1px solid #ddd;">
+        <label style="display:block;margin-bottom:12px;"><input type="checkbox" id="agree" required> I understand this is a demo account and no real money is exchanged.</label>
+        <button class="btn-primary" type="submit">Create Demo Account</button>
+      </div>
+    </form>
+
+    <div id="regResult" style="margin-top:24px;"></div>
+  </div>
+
+  <script>
+    function registerDemo(){
+      const name=document.getElementById('name').value;
+      const e=document.getElementById('email').value;
+      document.getElementById('regResult').innerHTML = '<div style="padding:14px;background:#eaf2ff;border-radius:10px;">✅ Demo account created for <strong>'+name+'</strong>. Check your demo dashboard: <a href="buyer.html">Buyer view</a></div>';
+    }
+  </script>
+</body></html>
