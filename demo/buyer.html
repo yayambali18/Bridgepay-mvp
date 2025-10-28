@@ -1,13 +1,25 @@
 <!doctype html>
-<html>
-<head><meta charset="utf-8"><title>BridgePay — Buyer</title></head>
-<body>
-  <h1>Buyer Status</h1>
-  <p>Order ID: 0001</p>
-  <p>Payment: <strong>Held</strong></p>
-  <button onclick="alert('Simulate confirm')">Confirm Received</button>
-  <button onclick="alert('Simulate claim')">File a Claim</button>
-  <p>Claim photo:</p>
-  <img src="./buyer-claim.jpg" alt="Buyer claim" style="max-width:300px;">
-</body>
-</html>
+<html><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><title>BridgePay — Buyer Demo</title><link rel="stylesheet" href="../assets/styles.css"></head><body>
+  <div class="container" style="padding:40px;">
+    <h1>Buyer Dashboard (Demo)</h1>
+    <div style="max-width:720px;">
+      <div style="background:#fff;padding:18px;border-radius:12px;box-shadow:0 8px 20px rgba(0,0,0,0.04);">
+        <h3>Order #0001 — 2× Glasses</h3>
+        <p>Status: <strong>Delivered</strong></p>
+        <p>Seller uploaded proof and delivery marked. What would you like to do?</p>
+        <button class="btn-primary" onclick="confirmReceived()">✅ Confirm Received</button>
+        <button class="btn-secondary" onclick="fileClaim()">⚠️ File Dispute</button>
+        <div id="buyerMsg" style="margin-top:12px;color:#555;"></div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function confirmReceived(){
+      document.getElementById('buyerMsg').innerHTML = '✅ Thank you — payment released to seller (demo).';
+    }
+    function fileClaim(){
+      document.getElementById('buyerMsg').innerHTML = '⚠️ Dispute filed. BridgePay AI will review (demo).';
+    }
+  </script>
+</body></html>
