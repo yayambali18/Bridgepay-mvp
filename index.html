@@ -3,24 +3,24 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>BridgePay — Demo</title>
+  <title>BridgePay — AI-Powered Trust Layer for E-Commerce</title>
   <link rel="stylesheet" href="assets/styles.css">
 </head>
-<body>
+<body class="dark-mode">
   <header class="site-header">
     <div class="container">
       <div class="brand">
         <div class="logo-mark">⛩️</div>
         <div>
           <div class="brand-title">BridgePay</div>
-          <div class="brand-sub"> <em>bridging distances, building bonds</em></div>
+          <div class="brand-sub"><em>bridging distances, building bonds</em></div>
         </div>
       </div>
       <nav class="nav">
         <a href="#how">How it works</a>
         <a href="#why">Why BridgePay</a>
-        <a href="demo/register.html">Register (demo)</a>
-        <button id="themeToggle" class="btn-ghost">🌙</button>
+        <a href="#demo">Demo</a>
+        <button id="themeToggle" class="btn-ghost">☀️</button>
       </nav>
     </div>
   </header>
@@ -30,14 +30,13 @@
       <div class="container hero-inner">
         <div class="hero-text">
           <h1>BridgePay — The AI-Powered Trust Layer for Online Transactions</h1>
-          <p class="lead">Protecting buyers and sellers through verified payments and fair resolution.</p>
+          <p class="lead">Protecting buyers and sellers through verified payments, AI fingerprint detection, and fair dispute resolution. The bridge between e-commerce companies and customers.</p>
           <div class="cta-row">
-            <a class="btn-primary" href="demo/register.html">Get Started (Demo)</a>
+            <a class="btn-primary" href="#demo">View Demo</a>
             <a class="btn-secondary" href="#how">Learn More</a>
           </div>
         </div>
         <div class="hero-visual">
-          <!-- small AI circuit illustration (decorative) -->
           <div class="ai-box">AI</div>
         </div>
       </div>
@@ -49,18 +48,15 @@
         <div class="tracker-left">
           <div class="tracker-card">
             <strong>Order #0001</strong>
-            <p>2 × Glasses — <span class="muted">Pending delivery</span></p>
-            <p>Estimated delivery: <strong>2 days</strong></p>
-            <button class="btn-primary" onclick="openTracker()">Track Order</button>
+            <p>2 × Premium Wireless Headphones — <span class="muted">In Transit</span></p>
+            <p>Estimated delivery: <strong>Tomorrow, 2 PM</strong></p>
+            <button class="btn-primary" onclick="window.openTracker()">Track Order</button>
           </div>
         </div>
         <div class="tracker-right">
-          <!-- inline map / progress with a yellow car -->
           <div class="map-card" id="mapCard" aria-hidden="false">
             <svg id="mapSVG" viewBox="0 0 600 160" preserveAspectRatio="none" class="map-svg">
-              <!-- dotted path -->
-              <path id="route" d="M20 120 C120 90, 200 130, 300 80, 380 40, 480 100, 580 80" stroke="#ddd" stroke-width="3" fill="none" stroke-dasharray="6 8" />
-              <!-- yellow car (group) -->
+              <path id="route" d="M20 120 C120 90, 200 130, 300 80, 380 40, 480 100, 580 80" stroke="#8B5CF6" stroke-width="3" fill="none" stroke-dasharray="6 8" />
               <g id="car" transform="translate(20,115)">
                 <rect x="0" y="-10" rx="6" ry="6" width="44" height="20" fill="#FFD400" />
                 <circle cx="10" cy="12" r="4" fill="#222"></circle>
@@ -79,17 +75,17 @@
         <div class="card">
           <div class="icon">🧑‍💻</div>
           <h3>Buyer</h3>
-          <p>Buyer makes purchase and payment is held securely by BridgePay.</p>
+          <p>Buyer makes purchase and payment is held securely by BridgePay in escrow. No funds go directly to the seller until verification is complete.</p>
         </div>
         <div class="card">
           <div class="icon">🏪</div>
           <h3>Seller</h3>
-          <p>Seller uploads timestamped proof (photos/video) and ships the item.</p>
+          <p>Seller uploads timestamped proof (photos/video) with product details and ships the item. BridgePay verifies authenticity before payment release.</p>
         </div>
         <div class="card">
           <div class="icon">🤖</div>
           <h3>BridgePay AI</h3>
-          <p>AI compares proofs — if valid, BridgePay releases funds. If not, dispute workflow triggers.</p>
+          <p>AI fingerprint detection compares seller proof with buyer's received product. If verified, payment releases. If disputed, investigation triggers and trust scores update.</p>
         </div>
       </div>
     </section>
@@ -100,33 +96,113 @@
         <div class="feature">
           <div class="ficon">🔒</div>
           <h4>Trust & Security</h4>
-          <p>Escrow-style holding, transparent logs, and auditable verification.</p>
+          <p>Escrow-style payment holding, transparent transaction logs, and auditable AI verification. Both buyers and sellers are protected from fraud.</p>
         </div>
         <div class="feature">
           <div class="ficon">⚡</div>
           <h4>Instant Verification</h4>
-          <p>Fast, automated checks reduce disputes and chargebacks.</p>
+          <p>Fast, automated AI checks reduce disputes and chargebacks. Products verified within seconds using advanced fingerprint detection technology.</p>
         </div>
         <div class="feature">
           <div class="ficon">📈</div>
           <h4>Operational Savings</h4>
-          <p>Reduce manual review overhead — let AI catch obvious fraud.</p>
+          <p>Reduce manual review overhead — let AI catch obvious fraud and mismatches. Lower chargeback rates mean better profitability for e-commerce partners.</p>
+        </div>
+        <div class="feature">
+          <div class="ficon">⭐</div>
+          <h4>Trust Scoring System</h4>
+          <p>Buyers and sellers build reputation through verified transactions. Liars are flagged automatically. High trust scores unlock premium features and better rates.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="demo" class="join container">
+      <h2>Experience BridgePay</h2>
+      <p>Explore our professional demo dashboards to see how BridgePay protects both buyers and sellers.</p>
+      
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; margin-top: 32px;">
+        <div class="card" style="text-align: center; padding: 40px 32px;">
+          <div style="font-size: 48px; margin-bottom: 16px;">🧑‍💻</div>
+          <h3 style="margin-bottom: 12px;">Buyer Dashboard</h3>
+          <p style="margin-bottom: 24px;">View orders, track shipments, check trust score, and experience AI product verification.</p>
+          <a class="btn-primary" href="demo/buyer-dashboard.html" style="width: 100%;">Enter Buyer Demo</a>
+        </div>
+
+        <div class="card" style="text-align: center; padding: 40px 32px;">
+          <div style="font-size: 48px; margin-bottom: 16px;">🏪</div>
+          <h3 style="margin-bottom: 12px;">Seller Dashboard</h3>
+          <p style="margin-bottom: 24px;">Manage orders, upload product proofs, track payments in escrow, and build reputation.</p>
+          <a class="btn-primary" href="demo/seller-dashboard.html" style="width: 100%;">Enter Seller Demo</a>
+        </div>
+
+        <div class="card" style="text-align: center; padding: 40px 32px;">
+          <div style="font-size: 48px; margin-bottom: 16px;">👨‍💼</div>
+          <h3 style="margin-bottom: 12px;">Admin Dashboard</h3>
+          <p style="margin-bottom: 24px;">Monitor system health, manage disputes, view AI analytics, and oversee platform operations.</p>
+          <a class="btn-primary" href="demo/admin-dashboard.html" style="width: 100%;">Enter Admin Demo</a>
+        </div>
+      </div>
+    </section>
+
+    <section style="padding: 48px 24px; background: linear-gradient(135deg, rgba(109, 40, 217, 0.05) 0%, rgba(139, 92, 246, 0.02) 100%); border-top: 1px solid rgba(139, 92, 246, 0.15); border-bottom: 1px solid rgba(139, 92, 246, 0.15);">
+      <div class="container">
+        <h2 style="color: var(--white); text-align: center; margin-bottom: 32px; font-size: 32px;">Key Features</h2>
+        
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 24px;">
+          <div style="background: linear-gradient(135deg, var(--bg-secondary) 0%, var(--bg-tertiary) 100%); padding: 24px; border-radius: 16px; border: 1px solid var(--border-color);">
+            <div style="font-size: 32px; margin-bottom: 12px;">💳</div>
+            <h4 style="color: var(--white); margin-bottom: 8px;">Escrow Payment Holding</h4>
+            <p style="color: var(--text-secondary); font-size: 13px; line-height: 1.6;">Payments held securely until product verification is complete. No funds released until both parties are satisfied.</p>
+          </div>
+
+          <div style="background: linear-gradient(135deg, var(--bg-secondary) 0%, var(--bg-tertiary) 100%); padding: 24px; border-radius: 16px; border: 1px solid var(--border-color);">
+            <div style="font-size: 32px; margin-bottom: 12px;">🔍</div>
+            <h4 style="color: var(--white); margin-bottom: 8px;">AI Fingerprint Detection</h4>
+            <p style="color: var(--text-secondary); font-size: 13px; line-height: 1.6;">Advanced computer vision detects if received product matches seller's proof. 98%+ accuracy in identifying fraud.</p>
+          </div>
+
+          <div style="background: linear-gradient(135deg, var(--bg-secondary) 0%, var(--bg-tertiary) 100%); padding: 24px; border-radius: 16px; border: 1px solid var(--border-color);">
+            <div style="font-size: 32px; margin-bottom: 12px;">⭐</div>
+            <h4 style="color: var(--white); margin-bottom: 8px;">Trust Score System</h4>
+            <p style="color: var(--text-secondary); font-size: 13px; line-height: 1.6;">Buyers and sellers build reputation. Liars are automatically flagged. High scores unlock premium features.</p>
+          </div>
+
+          <div style="background: linear-gradient(135deg, var(--bg-secondary) 0%, var(--bg-tertiary) 100%); padding: 24px; border-radius: 16px; border: 1px solid var(--border-color);">
+            <div style="font-size: 32px; margin-bottom: 12px;">🚚</div>
+            <h4 style="color: var(--white); margin-bottom: 8px;">Real-Time Tracking</h4>
+            <p style="color: var(--text-secondary); font-size: 13px; line-height: 1.6;">Live order tracking with checkpoints. Buyers know exactly when their product will arrive.</p>
+          </div>
+
+          <div style="background: linear-gradient(135deg, var(--bg-secondary) 0%, var(--bg-tertiary) 100%); padding: 24px; border-radius: 16px; border: 1px solid var(--border-color);">
+            <div style="font-size: 32px; margin-bottom: 12px;">⚖️</div>
+            <h4 style="color: var(--white); margin-bottom: 8px;">Fair Dispute Resolution</h4>
+            <p style="color: var(--text-secondary); font-size: 13px; line-height: 1.6;">AI-assisted dispute handling. If product is authentic, payment releases. If fraud detected, buyer refunded.</p>
+          </div>
+
+          <div style="background: linear-gradient(135deg, var(--bg-secondary) 0%, var(--bg-tertiary) 100%); padding: 24px; border-radius: 16px; border: 1px solid var(--border-color);">
+            <div style="font-size: 32px; margin-bottom: 12px;">📊</div>
+            <h4 style="color: var(--white); margin-bottom: 8px;">Analytics & Insights</h4>
+            <p style="color: var(--text-secondary); font-size: 13px; line-height: 1.6;">Comprehensive dashboards for buyers, sellers, and admins. Real-time metrics and performance tracking.</p>
+          </div>
         </div>
       </div>
     </section>
 
     <section class="join container">
-      <h2>Join BridgePay</h2>
-      <p>Demo registration — test the flow and see the reduction in disputes.</p>
-      <a class="btn-primary" href="demo/register.html">Sign Up (Demo)</a>
+      <h2>Ready to Transform E-Commerce?</h2>
+      <p>BridgePay is the bridge between e-commerce companies and customers. Let's build trust together.</p>
+      <div style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;">
+        <a class="btn-primary" href="demo/buyer-dashboard.html">Explore Demo</a>
+        <a class="btn-secondary" href="#how">Learn More</a>
+      </div>
     </section>
 
   </main>
 
   <footer class="site-footer">
     <div class="container">
-      <div>© 2025 BridgePay | Designed by Yaya &amp; Co</div>
-      <div class="muted">Demo site — not for production use</div>
+      <div>© 2025 BridgePay | AI-Powered Trust Layer for E-Commerce</div>
+      <div class="muted">Professional Demo Site — Designed for Enterprise Partnerships</div>
     </div>
   </footer>
 

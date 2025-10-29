@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Dashboard — BridgePay</title>
+  <link rel="stylesheet" href="../assets/styles.css">
+</head>
+<body class="dark-mode">
+  <header class="site-header">
+    <div class="container">
+      <div class="brand">
+        <div class="logo-mark">⛩️</div>
+        <div>
+          <div class="brand-title">BridgePay</div>
+          <div class="brand-sub">Admin Dashboard</div>
+        </div>
+      </div>
+      <nav class="nav">
+        <a href="../index.html">Home</a>
+        <a href="#system">System</a>
+        <a href="#disputes">Disputes</a>
+        <a href="#analytics">Analytics</a>
+        <button id="themeToggle" class="btn-ghost">☀️</button>
+      </nav>
+    </div>
+  </header>
+
+  <div class="dashboard-container">
+    <aside class="sidebar">
+      <a href="#dashboard" class="sidebar-item active">📊 Dashboard</a>
+      <a href="#system" class="sidebar-item">🔧 System Status</a>
+      <a href="#disputes" class="sidebar-item">⚖️ Disputes</a>
+      <a href="#users" class="sidebar-item">👥 Users</a>
+      <a href="#analytics" class="sidebar-item">📈 Analytics</a>
+      <a href="#ai" class="sidebar-item">🤖 AI Verification</a>
+      <a href="#settings" class="sidebar-item">⚙️ Settings</a>
+      <a href="../index.html" class="sidebar-item">🏠 Back Home</a>
+    </aside>
+
+    <main class="main-content">
+      <!-- DASHBOARD OVERVIEW -->
+      <section id="dashboard">
+        <h1 style="color: var(--white); margin-bottom: 32px; font-size: 36px;">Admin Control Center</h1>
+        
+        <div class="dashboard-grid">
+          <div class="stat-card">
+            <div class="stat-label">Total Transactions</div>
+            <div class="stat-value">12,847</div>
+            <div class="stat-change">↑ 2,340 this month</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-label">Total Volume</div>
+            <div class="stat-value">$2.4M</div>
+            <div class="stat-change">↑ $450K this month</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-label">Active Users</div>
+            <div class="stat-value">3,284</div>
+            <div class="stat-change">↑ 340 new users</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-label">Dispute Rate</div>
+            <div class="stat-value">0.8%</div>
+            <div class="stat-change">↓ 0.2% vs last month</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SYSTEM STATUS -->
+      <section id="system" style="margin-top: 48px;">
+        <h2 style="color: var(--white); margin-bottom: 24px; font-size: 28px;">System Status</h2>
+        
+        <div class="dashboard-grid">
+          <div class="stat-card">
+            <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 12px;">
+              <span style="width: 12px; height: 12px; background: #10b981; border-radius: 50%; display: inline-block;"></span>
+              <div class="stat-label" style="margin: 0;">API Server</div>
+            </div>
+            <div style="color: #10b981; font-size: 14px; font-weight: 600;">Operational</div>
+            <div style="color: var(--text-muted); font-size: 12px; margin-top: 8px;">Uptime: 99.98%</div>
+          </div>
+          <div class="stat-card">
+            <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 12px;">
+              <span style="width: 12px; height: 12px; background: #10b981; border-radius: 50%; display: inline-block;"></span>
+              <div class="stat-label" style="margin: 0;">Database</div>
+            </div>
+            <div style="color: #10b981; font-size: 14px; font-weight: 600;">Operational</div>
+            <div style="color: var(--text-muted); font-size: 12px; margin-top: 8px;">Response: 12ms</div>
+          </div>
+          <div class="stat-card">
+            <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 12px;">
+              <span style="width: 12px; height: 12px; background: #10b981; border-radius: 50%; display: inline-block;"></span>
+              <div class="stat-label" style="margin: 0;">AI Engine</div>
+            </div>
+            <div style="color: #10b981; font-size: 14px; font-weight: 600;">Operational</div>
+            <div style="color: var(--text-muted); font-size: 12px; margin-top: 8px;">Accuracy: 98.4%</div>
+          </div>
+          <div class="stat-card">
+            <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 12px;">
+              <span style="width: 12px; height: 12px; background: #10b981; border-radius: 50%; display: inline-block;"></span>
+              <div class="stat-label" style="margin: 0;">Payment Gateway</div>
+            </div>
+            <div style="color: #10b981; font-size: 14px; font-weight: 600;">Operational</div>
+            <div style="color: var(--text-muted); font-size: 12px; margin-top: 8px;">Processing: 99.9%</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ACTIVE DISPUTES -->
+      <section id="disputes" style="margin-top: 48px;">
+        <h2 style="color: var(--white); margin-bottom: 24px; font-size: 28px;">Active Disputes</h2>
+        
+        <div class="table-container">
+          <table>
+            <thead>
+              <tr>
+                <th>Dispute ID</th>
+                <th>Order ID</th>
+                <th>Buyer</th>
+                <th>Seller</th>
+                <th>Amount</th>
+                <th>Status</th>
+                <th>AI Verdict</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>#DSP-2025-001</td>
+                <td>#BP-2025-089</td>
+                <td>Alice R.</td>
+                <td>TechStore Pro</td>
+                <td>$159.99</td>
+                <td>⚖️ Under Review</td>
+                <td>🔍 Analyzing...</td>
+              </tr>
+              <tr>
+                <td>#DSP-2025-002</td>
+                <td>#BP-2025-087</td>
+                <td>Bob K.</td>
+                <td>ElectroHub</td>
+                <td>$89.50</td>
+                <td>⚖️ Under Review</td>
+                <td>✅ Verified Authentic</td>
+              </tr>
+              <tr>
+                <td>#DSP-2025-003</td>
+                <td>#BP-2025-084</td>
+                <td>Carol S.</td>
+                <td>GadgetWorld</td>
+                <td>$245.00</td>
+                <td>⚖️ Under Review</td>
+                <td>⚠️ Mismatch Detected</td>
+              </tr>
+              <tr>
+                <td>#DSP-2025-004</td>
+                <td>#BP-2025-082</td>
+                <td>David M.</td>
+                <td>Premium Goods</td>
+                <td>$75.25</td>
+                <td>✅ Resolved</td>
+                <td>✅ Buyer Refunded</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- AI VERIFICATION ANALYTICS -->
+      <section id="ai" style="margin-top: 48px;">
+        <h2 style="color: var(--white); margin-bottom: 24px; font-size: 28px;">AI Fingerprint Detection Analytics</h2>
+        
+        <div class="dashboard-grid">
+          <div class="stat-card">
+            <div class="stat-label">Verifications Today</div>
+            <div class="stat-value">342</div>
+            <div class="stat-change">↑ 45 vs yesterday</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-label">Accuracy Rate</div>
+            <div class="stat-value">98.4%</div>
+            <div class="stat-change">↑ 0.3% improvement</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-label">Fraud Detected</div>
+            <div class="stat-value">8</div>
+            <div class="stat-change">2.3% of verifications</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-label">Avg Processing Time</div>
+            <div class="stat-value">2.3s</div>
+            <div class="stat-change">↓ 0.4s faster</div>
+          </div>
+        </div>
+
+        <div class="card" style="padding: 32px; margin-top: 24px;">
+          <h3 style="color: var(--white); margin-bottom: 16px;">How AI Fingerprint Detection Works</h3>
+          
+          <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px;">
+            <div style="background: rgba(139, 92, 246, 0.05); padding: 16px; border-radius: 10px; border: 1px solid var(--border-color);">
+              <div style="color: var(--text-secondary); font-size: 12px; text-transform: uppercase; margin-bottom: 8px; font-weight: 600;">1. Image Analysis</div>
+              <p style="color: var(--text-secondary); font-size: 13px; line-height: 1.6; margin: 0;">
+                AI analyzes product images from seller and buyer using advanced computer vision algorithms.
+              </p>
+            </div>
+            <div style="background: rgba(139, 92, 246, 0.05); padding: 16px; border-radius: 10px; border: 1px solid var(--border-color);">
+              <div style="color: var(--text-secondary); font-size: 12px; text-transform: uppercase; margin-bottom: 8px; font-weight: 600;">2. Feature Extraction</div>
+              <p style="color: var(--text-secondary); font-size: 13px; line-height: 1.6; margin: 0;">
+                Extracts unique fingerprints: scratches, wear patterns, serial numbers, and physical characteristics.
+              </p>
+            </div>
+            <div style="background: rgba(139, 92, 246, 0.05); padding: 16px; border-radius: 10px; border: 1px solid var(--border-color);">
+              <div style="color: var(--text-secondary); font-size: 12px; text-transform: uppercase; margin-bottom: 8px; font-weight: 600;">3. Comparison</div>
+              <p style="color: var(--text-secondary); font-size: 13px; line-height: 1.6; margin: 0;">
+                Compares fingerprints to determine if products match with 98%+ accuracy.
+              </p>
+            </div>
+            <div style="background: rgba(139, 92, 246, 0.05); padding: 16px; border-radius: 10px; border: 1px solid var(--border-color);">
+              <div style="color: var(--text-secondary); font-size: 12px; text-transform: uppercase; margin-bottom: 8px; font-weight: 600;">4. Verdict</div>
+              <p style="color: var(--text-secondary); font-size: 13px; line-height: 1.6; margin: 0;">
+                Returns verdict: Authentic, Mismatch, or Inconclusive. Payment released or held accordingly.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- USER MANAGEMENT -->
+      <section id="users" style="margin-top: 48px; margin-bottom: 48px;">
+        <h2 style="color: var(--white); margin-bottom: 24px; font-size: 28px;">User Management</h2>
+        
+        <div class="table-container">
+          <table>
+            <thead>
+              <tr>
+                <th>User ID</th>
+                <th>Name</th>
+                <th>Type</th>
+                <th>Status</th>
+                <th>Trust Score</th>
+                <th>Transactions</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>#USR-2025-001</td>
+                <td>John Doe</td>
+                <td>Buyer</td>
+                <td>✅ Active</td>
+                <td>94%</td>
+                <td>47</td>
+              </tr>
+              <tr>
+                <td>#USR-2025-002</td>
+                <td>TechStore Pro</td>
+                <td>Seller</td>
+                <td>✅ Active</td>
+                <td>98%</td>
+                <td>342</td>
+              </tr>
+              <tr>
+                <td>#USR-2025-003</td>
+                <td>Sarah Miller</td>
+                <td>Buyer</td>
+                <td>✅ Active</td>
+                <td>87%</td>
+                <td>23</td>
+              </tr>
+              <tr>
+                <td>#USR-2025-004</td>
+                <td>ElectroHub</td>
+                <td>Seller</td>
+                <td>⚠️ Flagged</td>
+                <td>62%</td>
+                <td>156</td>
+              </tr>
+              <tr>
+                <td>#USR-2025-005</td>
+                <td>Mike Thompson</td>
+                <td>Buyer</td>
+                <td>✅ Active</td>
+                <td>91%</td>
+                <td>34</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div>© 2025 BridgePay | Admin Dashboard</div>
+      <div class="muted">Professional Demo — System Administration</div>
+    </div>
+  </footer>
+
+  <script src="../assets/app.js"></script>
+</body>
+</html>

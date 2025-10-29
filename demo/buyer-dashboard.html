@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Buyer Dashboard — BridgePay</title>
+  <link rel="stylesheet" href="../assets/styles.css">
+</head>
+<body class="dark-mode">
+  <header class="site-header">
+    <div class="container">
+      <div class="brand">
+        <div class="logo-mark">⛩️</div>
+        <div>
+          <div class="brand-title">BridgePay</div>
+          <div class="brand-sub">Buyer Dashboard</div>
+        </div>
+      </div>
+      <nav class="nav">
+        <a href="../index.html">Home</a>
+        <a href="#orders">My Orders</a>
+        <a href="#disputes">Disputes</a>
+        <a href="#profile">Profile</a>
+        <button id="themeToggle" class="btn-ghost">☀️</button>
+      </nav>
+    </div>
+  </header>
+
+  <div class="dashboard-container">
+    <aside class="sidebar">
+      <a href="#dashboard" class="sidebar-item active">📊 Dashboard</a>
+      <a href="#orders" class="sidebar-item">📦 My Orders</a>
+      <a href="#tracking" class="sidebar-item">🚚 Track Orders</a>
+      <a href="#disputes" class="sidebar-item">⚠️ Disputes</a>
+      <a href="#trust" class="sidebar-item">⭐ Trust Score</a>
+      <a href="#wallet" class="sidebar-item">💳 Wallet</a>
+      <a href="#settings" class="sidebar-item">⚙️ Settings</a>
+      <a href="../index.html" class="sidebar-item">🏠 Back Home</a>
+    </aside>
+
+    <main class="main-content">
+      <!-- DASHBOARD OVERVIEW -->
+      <section id="dashboard">
+        <h1 style="color: var(--white); margin-bottom: 32px; font-size: 36px;">Welcome Back, Buyer</h1>
+        
+        <div class="dashboard-grid">
+          <div class="stat-card">
+            <div class="stat-label">Total Orders</div>
+            <div class="stat-value">12</div>
+            <div class="stat-change">↑ 3 this month</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-label">Pending Delivery</div>
+            <div class="stat-value">2</div>
+            <div class="stat-change">Awaiting confirmation</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-label">Trust Score</div>
+            <div class="stat-value">94%</div>
+            <div class="stat-change">Excellent standing</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-label">Total Spent</div>
+            <div class="stat-value">$1,245</div>
+            <div class="stat-change">↑ $320 this month</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ACTIVE ORDERS -->
+      <section id="orders" style="margin-top: 48px;">
+        <h2 style="color: var(--white); margin-bottom: 24px; font-size: 28px;">Active Orders</h2>
+        
+        <div class="table-container">
+          <table>
+            <thead>
+              <tr>
+                <th>Order ID</th>
+                <th>Product</th>
+                <th>Amount</th>
+                <th>Status</th>
+                <th>Payment Status</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>#BP-2025-001</td>
+                <td>Premium Wireless Headphones</td>
+                <td>$89.99</td>
+                <td>🚚 In Transit</td>
+                <td>💳 Held in Escrow</td>
+                <td><button class="btn-tertiary" onclick="window.openTracker()">Track</button></td>
+              </tr>
+              <tr>
+                <td>#BP-2025-002</td>
+                <td>USB-C Cable Bundle</td>
+                <td>$24.99</td>
+                <td>📦 Delivered</td>
+                <td>✅ Confirmed</td>
+                <td><button class="btn-tertiary" onclick="showNotification('Order confirmed!', 'success')">View</button></td>
+              </tr>
+              <tr>
+                <td>#BP-2025-003</td>
+                <td>Laptop Stand</td>
+                <td>$45.50</td>
+                <td>🚚 In Transit</td>
+                <td>💳 Held in Escrow</td>
+                <td><button class="btn-tertiary" onclick="window.openTracker()">Track</button></td>
+              </tr>
+              <tr>
+                <td>#BP-2025-004</td>
+                <td>Mechanical Keyboard</td>
+                <td>$129.99</td>
+                <td>✅ Completed</td>
+                <td>✅ Released</td>
+                <td><button class="btn-tertiary" onclick="showNotification('Order completed', 'success')">View</button></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- PRODUCT TRACKING -->
+      <section id="tracking" style="margin-top: 48px;">
+        <h2 style="color: var(--white); margin-bottom: 24px; font-size: 28px;">Live Tracking</h2>
+        
+        <div class="tracker-row">
+          <div class="tracker-left">
+            <div class="tracker-card">
+              <strong>Order #BP-2025-001</strong>
+              <p>Premium Wireless Headphones — <span class="muted">In Transit</span></p>
+              <p>Estimated delivery: <strong>Tomorrow, 2 PM</strong></p>
+              <div style="margin-top: 16px;">
+                <div style="font-size: 12px; color: var(--text-secondary); margin-bottom: 8px; text-transform: uppercase; font-weight: 600;">Checkpoints:</div>
+                <div style="display: flex; gap: 8px; align-items: center;">
+                  <span class="checkpoint completed" style="width: 24px; height: 24px; background: #10b981; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-size: 12px; font-weight: bold;">✓</span>
+                  <span style="color: var(--text-secondary); font-size: 12px;">Order Placed</span>
+                </div>
+                <div style="display: flex; gap: 8px; align-items: center; margin-top: 8px;">
+                  <span class="checkpoint completed" style="width: 24px; height: 24px; background: #10b981; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-size: 12px; font-weight: bold;">✓</span>
+                  <span style="color: var(--text-secondary); font-size: 12px;">Seller Confirmed</span>
+                </div>
+                <div style="display: flex; gap: 8px; align-items: center; margin-top: 8px;">
+                  <span class="checkpoint completed" style="width: 24px; height: 24px; background: #10b981; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-size: 12px; font-weight: bold;">✓</span>
+                  <span style="color: var(--text-secondary); font-size: 12px;">Shipped</span>
+                </div>
+                <div style="display: flex; gap: 8px; align-items: center; margin-top: 8px;">
+                  <span class="checkpoint" style="width: 24px; height: 24px; background: var(--purple-light); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-size: 12px; font-weight: bold;">→</span>
+                  <span style="color: var(--text-secondary); font-size: 12px;">In Transit</span>
+                </div>
+                <div style="display: flex; gap: 8px; align-items: center; margin-top: 8px;">
+                  <span class="checkpoint" style="width: 24px; height: 24px; background: rgba(139, 92, 246, 0.3); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-size: 12px; font-weight: bold;">○</span>
+                  <span style="color: var(--text-muted); font-size: 12px;">Delivery</span>
+                </div>
+              </div>
+              <button class="btn-primary" onclick="window.openTracker()" style="margin-top: 16px; width: 100%;">Live Map</button>
+            </div>
+          </div>
+          <div class="tracker-right">
+            <div class="map-card">
+              <svg id="mapSVG" viewBox="0 0 600 160" preserveAspectRatio="none" class="map-svg">
+                <path id="route" d="M20 120 C120 90, 200 130, 300 80, 380 40, 480 100, 580 80" stroke="#8B5CF6" stroke-width="3" fill="none" stroke-dasharray="6 8" />
+                <g id="car" transform="translate(20,115)">
+                  <rect x="0" y="-10" rx="6" ry="6" width="44" height="20" fill="#FFD400" />
+                  <circle cx="10" cy="12" r="4" fill="#222"></circle>
+                  <circle cx="34" cy="12" r="4" fill="#222"></circle>
+                </g>
+              </svg>
+              <div class="map-status" id="mapStatus">Your order is at checkpoint #3 — in transit</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- TRUST SCORE -->
+      <section id="trust" style="margin-top: 48px;">
+        <h2 style="color: var(--white); margin-bottom: 24px; font-size: 28px;">Your Trust Score</h2>
+        
+        <div class="card" style="padding: 32px;">
+          <div style="display: flex; align-items: center; gap: 16px; margin-bottom: 24px;">
+            <div style="font-size: 48px;">⭐</div>
+            <div>
+              <div style="color: var(--white); font-size: 28px; font-weight: 900;">94%</div>
+              <div style="color: var(--text-secondary); font-size: 14px;">Excellent Standing</div>
+            </div>
+          </div>
+
+          <div style="background: rgba(139, 92, 246, 0.1); padding: 16px; border-radius: 10px; margin-bottom: 24px;">
+            <div style="font-size: 12px; color: var(--text-secondary); margin-bottom: 8px; text-transform: uppercase; font-weight: 600;">Trust Score Progress</div>
+            <div style="width: 100%; height: 8px; background: rgba(139, 92, 246, 0.1); border-radius: 4px; overflow: hidden;">
+              <div id="trustScore" style="width: 94%; height: 100%; background: linear-gradient(90deg, #10b981, #059669); border-radius: 4px; transition: width 0.3s ease;"></div>
+            </div>
+          </div>
+
+          <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px;">
+            <div style="background: rgba(139, 92, 246, 0.05); padding: 16px; border-radius: 10px; border: 1px solid var(--border-color);">
+              <div style="color: var(--text-secondary); font-size: 12px; text-transform: uppercase; margin-bottom: 8px;">Completed Orders</div>
+              <div style="color: var(--white); font-size: 24px; font-weight: 900;">47</div>
+            </div>
+            <div style="background: rgba(139, 92, 246, 0.05); padding: 16px; border-radius: 10px; border: 1px solid var(--border-color);">
+              <div style="color: var(--text-secondary); font-size: 12px; text-transform: uppercase; margin-bottom: 8px;">Disputes</div>
+              <div style="color: var(--white); font-size: 24px; font-weight: 900;">1</div>
+            </div>
+            <div style="background: rgba(139, 92, 246, 0.05); padding: 16px; border-radius: 10px; border: 1px solid var(--border-color);">
+              <div style="color: var(--text-secondary); font-size: 12px; text-transform: uppercase; margin-bottom: 8px;">Confirmed Deliveries</div>
+              <div style="color: var(--white); font-size: 24px; font-weight: 900;">46</div>
+            </div>
+          </div>
+
+          <div style="margin-top: 24px; padding: 16px; background: rgba(16, 185, 129, 0.1); border-left: 3px solid #10b981; border-radius: 8px;">
+            <p style="color: var(--text-secondary); font-size: 13px; margin: 0;">
+              ✅ Your trust score is excellent! You have access to premium seller features and priority support.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- AI FINGERPRINT DETECTION DEMO -->
+      <section id="fingerprint" style="margin-top: 48px; margin-bottom: 48px;">
+        <h2 style="color: var(--white); margin-bottom: 24px; font-size: 28px;">AI Product Verification</h2>
+        
+        <div class="card" style="padding: 32px;">
+          <p style="color: var(--text-secondary); margin-bottom: 24px;">
+            When your product arrives, BridgePay's AI fingerprint detection automatically verifies that the product you received matches the seller's proof. This protects you from fraud and ensures fair transactions.
+          </p>
+          
+          <button class="btn-primary" onclick="window.runFingerprintDetection()" style="margin-bottom: 24px;">
+            🔍 Run Verification Demo
+          </button>
+
+          <div id="fingerprintResult" style="padding: 16px; background: rgba(139, 92, 246, 0.1); border-radius: 10px; border: 1px solid var(--border-color); color: var(--text-secondary); min-height: 40px; display: flex; align-items: center;">
+            <p>Click the button above to see how AI verification works</p>
+          </div>
+
+          <div style="margin-top: 24px; padding: 16px; background: rgba(139, 92, 246, 0.05); border-radius: 10px;">
+            <div style="color: var(--text-secondary); font-size: 12px; text-transform: uppercase; font-weight: 600; margin-bottom: 12px;">How It Works:</div>
+            <ul style="color: var(--text-secondary); font-size: 13px; line-height: 1.8; list-style: none; padding: 0;">
+              <li>✓ Seller uploads timestamped proof photos/video before shipping</li>
+              <li>✓ You receive product and upload delivery photos</li>
+              <li>✓ AI analyzes both sets of images using advanced fingerprinting</li>
+              <li>✓ If verified: Payment released to seller immediately</li>
+              <li>✓ If disputed: BridgePay holds payment and investigates</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div>© 2025 BridgePay | Buyer Dashboard</div>
+      <div class="muted">Professional Demo — Protecting Buyers & Sellers</div>
+    </div>
+  </footer>
+
+  <script src="../assets/app.js"></script>
+</body>
+</html>

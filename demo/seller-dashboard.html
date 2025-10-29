@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Seller Dashboard — BridgePay</title>
+  <link rel="stylesheet" href="../assets/styles.css">
+</head>
+<body class="dark-mode">
+  <header class="site-header">
+    <div class="container">
+      <div class="brand">
+        <div class="logo-mark">⛩️</div>
+        <div>
+          <div class="brand-title">BridgePay</div>
+          <div class="brand-sub">Seller Dashboard</div>
+        </div>
+      </div>
+      <nav class="nav">
+        <a href="../index.html">Home</a>
+        <a href="#orders">Orders</a>
+        <a href="#payments">Payments</a>
+        <a href="#analytics">Analytics</a>
+        <button id="themeToggle" class="btn-ghost">☀️</button>
+      </nav>
+    </div>
+  </header>
+
+  <div class="dashboard-container">
+    <aside class="sidebar">
+      <a href="#dashboard" class="sidebar-item active">📊 Dashboard</a>
+      <a href="#orders" class="sidebar-item">📦 Pending Orders</a>
+      <a href="#proofs" class="sidebar-item">📸 Upload Proofs</a>
+      <a href="#payments" class="sidebar-item">💰 Payments</a>
+      <a href="#analytics" class="sidebar-item">📈 Analytics</a>
+      <a href="#reputation" class="sidebar-item">⭐ Reputation</a>
+      <a href="#settings" class="sidebar-item">⚙️ Settings</a>
+      <a href="../index.html" class="sidebar-item">🏠 Back Home</a>
+    </aside>
+
+    <main class="main-content">
+      <!-- DASHBOARD OVERVIEW -->
+      <section id="dashboard">
+        <h1 style="color: var(--white); margin-bottom: 32px; font-size: 36px;">Seller Dashboard</h1>
+        
+        <div class="dashboard-grid">
+          <div class="stat-card">
+            <div class="stat-label">Active Listings</div>
+            <div class="stat-value">28</div>
+            <div class="stat-change">↑ 5 new this week</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-label">Pending Orders</div>
+            <div class="stat-value">7</div>
+            <div class="stat-change">Awaiting proofs</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-label">Seller Rating</div>
+            <div class="stat-value">4.8★</div>
+            <div class="stat-change">Based on 342 reviews</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-label">Revenue (Month)</div>
+            <div class="stat-value">$8,420</div>
+            <div class="stat-change">↑ $1,200 vs last month</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- PENDING ORDERS -->
+      <section id="orders" style="margin-top: 48px;">
+        <h2 style="color: var(--white); margin-bottom: 24px; font-size: 28px;">Pending Orders</h2>
+        
+        <div class="table-container">
+          <table>
+            <thead>
+              <tr>
+                <th>Order ID</th>
+                <th>Buyer</th>
+                <th>Product</th>
+                <th>Amount</th>
+                <th>Status</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>#BP-2025-001</td>
+                <td>John D.</td>
+                <td>Premium Wireless Headphones</td>
+                <td>$89.99</td>
+                <td>⏳ Awaiting Proof</td>
+                <td><button class="btn-tertiary" onclick="showNotification('Upload proof to proceed', 'info')">Upload Proof</button></td>
+              </tr>
+              <tr>
+                <td>#BP-2025-003</td>
+                <td>Sarah M.</td>
+                <td>Laptop Stand</td>
+                <td>$45.50</td>
+                <td>✅ Proof Uploaded</td>
+                <td><button class="btn-tertiary" onclick="showNotification('Proof verified by AI', 'success')">View Proof</button></td>
+              </tr>
+              <tr>
+                <td>#BP-2025-005</td>
+                <td>Mike T.</td>
+                <td>USB Hub 7-Port</td>
+                <td>$34.99</td>
+                <td>⏳ Awaiting Proof</td>
+                <td><button class="btn-tertiary" onclick="showNotification('Upload proof to proceed', 'info')">Upload Proof</button></td>
+              </tr>
+              <tr>
+                <td>#BP-2025-006</td>
+                <td>Emma L.</td>
+                <td>Monitor Arm</td>
+                <td>$67.50</td>
+                <td>🚚 Shipped</td>
+                <td><button class="btn-tertiary" onclick="showNotification('Awaiting buyer confirmation', 'info')">Track</button></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- PROOF UPLOAD SECTION -->
+      <section id="proofs" style="margin-top: 48px;">
+        <h2 style="color: var(--white); margin-bottom: 24px; font-size: 28px;">Upload Product Proof</h2>
+        
+        <div class="card" style="padding: 32px;">
+          <p style="color: var(--text-secondary); margin-bottom: 24px;">
+            Upload timestamped photos or videos of your product before shipping. This proof is used by BridgePay's AI to verify the product when the buyer receives it.
+          </p>
+
+          <div style="background: rgba(139, 92, 246, 0.1); padding: 32px; border: 2px dashed var(--border-color); border-radius: 10px; text-align: center; margin-bottom: 24px;">
+            <div style="font-size: 48px; margin-bottom: 16px;">📸</div>
+            <p style="color: var(--text-secondary); margin-bottom: 8px;">Drag and drop your proof images or videos here</p>
+            <p style="color: var(--text-muted); font-size: 12px; margin-bottom: 16px;">Supported formats: JPG, PNG, MP4, WebM (Max 50MB)</p>
+            <button class="btn-primary" onclick="showNotification('File upload demo - select files to upload', 'info')">Choose Files</button>
+          </div>
+
+          <div style="background: rgba(16, 185, 129, 0.1); padding: 16px; border-left: 3px solid #10b981; border-radius: 8px; margin-bottom: 24px;">
+            <p style="color: var(--text-secondary); font-size: 13px; margin: 0;">
+              ✅ Include timestamp, product serial number (if applicable), and multiple angles for best verification results.
+            </p>
+          </div>
+
+          <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px;">
+            <div style="background: rgba(139, 92, 246, 0.05); padding: 16px; border-radius: 10px; border: 1px solid var(--border-color);">
+              <div style="color: var(--text-secondary); font-size: 12px; text-transform: uppercase; margin-bottom: 8px; font-weight: 600;">Recent Uploads</div>
+              <div style="color: var(--white); font-size: 20px; font-weight: 900;">12</div>
+            </div>
+            <div style="background: rgba(139, 92, 246, 0.05); padding: 16px; border-radius: 10px; border: 1px solid var(--border-color);">
+              <div style="color: var(--text-secondary); font-size: 12px; text-transform: uppercase; margin-bottom: 8px; font-weight: 600;">Verification Rate</div>
+              <div style="color: var(--white); font-size: 20px; font-weight: 900;">98%</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- PAYMENT TRACKING -->
+      <section id="payments" style="margin-top: 48px;">
+        <h2 style="color: var(--white); margin-bottom: 24px; font-size: 28px;">Payment Tracking</h2>
+        
+        <div class="table-container">
+          <table>
+            <thead>
+              <tr>
+                <th>Order ID</th>
+                <th>Amount</th>
+                <th>Status</th>
+                <th>Held Since</th>
+                <th>Expected Release</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>#BP-2025-001</td>
+                <td>$89.99</td>
+                <td>💳 In Escrow</td>
+                <td>Jan 28, 2025</td>
+                <td>Jan 30, 2025</td>
+              </tr>
+              <tr>
+                <td>#BP-2025-003</td>
+                <td>$45.50</td>
+                <td>💳 In Escrow</td>
+                <td>Jan 27, 2025</td>
+                <td>Jan 29, 2025</td>
+              </tr>
+              <tr>
+                <td>#BP-2025-004</td>
+                <td>$129.99</td>
+                <td>✅ Released</td>
+                <td>Jan 20, 2025</td>
+                <td>Jan 22, 2025 (Completed)</td>
+              </tr>
+              <tr>
+                <td>#BP-2025-002</td>
+                <td>$24.99</td>
+                <td>✅ Released</td>
+                <td>Jan 15, 2025</td>
+                <td>Jan 17, 2025 (Completed)</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div style="margin-top: 24px; padding: 16px; background: rgba(139, 92, 246, 0.05); border-radius: 10px;">
+          <div style="color: var(--text-secondary); font-size: 12px; text-transform: uppercase; font-weight: 600; margin-bottom: 12px;">Escrow Explanation:</div>
+          <p style="color: var(--text-secondary); font-size: 13px; line-height: 1.8; margin: 0;">
+            BridgePay holds your payment in escrow until the buyer confirms receipt and our AI verifies the product. This protects both you and the buyer from fraud. Once verified, payment is released automatically to your account within 24 hours.
+          </p>
+        </div>
+      </section>
+
+      <!-- SELLER REPUTATION -->
+      <section id="reputation" style="margin-top: 48px; margin-bottom: 48px;">
+        <h2 style="color: var(--white); margin-bottom: 24px; font-size: 28px;">Your Reputation</h2>
+        
+        <div class="dashboard-grid">
+          <div class="stat-card">
+            <div class="stat-label">Overall Rating</div>
+            <div class="stat-value">4.8★</div>
+            <div class="stat-change">342 verified reviews</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-label">On-Time Delivery</div>
+            <div class="stat-value">99%</div>
+            <div class="stat-change">Excellent performance</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-label">Dispute Rate</div>
+            <div class="stat-value">0.3%</div>
+            <div class="stat-change">Below average</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-label">Response Time</div>
+            <div class="stat-value">2h 15m</div>
+            <div class="stat-change">Average response</div>
+          </div>
+        </div>
+
+        <div class="card" style="padding: 32px; margin-top: 24px;">
+          <h3 style="color: var(--white); margin-bottom: 16px;">Recent Reviews</h3>
+          
+          <div style="border-bottom: 1px solid var(--border-color); padding-bottom: 16px; margin-bottom: 16px;">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+              <div style="color: var(--white); font-weight: 600;">⭐⭐⭐⭐⭐ Excellent Service</div>
+              <div style="color: var(--text-muted); font-size: 12px;">2 days ago</div>
+            </div>
+            <p style="color: var(--text-secondary); font-size: 13px; margin: 0;">Fast shipping and great packaging. Product arrived in perfect condition. Highly recommended!</p>
+          </div>
+
+          <div style="border-bottom: 1px solid var(--border-color); padding-bottom: 16px; margin-bottom: 16px;">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+              <div style="color: var(--white); font-weight: 600;">⭐⭐⭐⭐⭐ Perfect Transaction</div>
+              <div style="color: var(--text-muted); font-size: 12px;">5 days ago</div>
+            </div>
+            <p style="color: var(--text-secondary); font-size: 13px; margin: 0;">Exactly as described. Communication was excellent. Will buy again!</p>
+          </div>
+
+          <div style="padding-bottom: 16px;">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+              <div style="color: var(--white); font-weight: 600;">⭐⭐⭐⭐ Good Quality</div>
+              <div style="color: var(--text-muted); font-size: 12px;">1 week ago</div>
+            </div>
+            <p style="color: var(--text-secondary); font-size: 13px; margin: 0;">Good product quality. Shipping took a bit longer than expected but still within timeframe.</p>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div>© 2025 BridgePay | Seller Dashboard</div>
+      <div class="muted">Professional Demo — Protecting Buyers & Sellers</div>
+    </div>
+  </footer>
+
+  <script src="../assets/app.js"></script>
+</body>
+</html>
